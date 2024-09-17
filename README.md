@@ -144,6 +144,8 @@ Menampilkan Data:
                     echo $Dosen1->tampilkanDosen();
           ?>
 
+<img width="384" alt="tgs1" src="https://github.com/user-attachments/assets/6c4c8163-09f4-4e98-8963-5dbffaff0bfa">
+
           
           
 
