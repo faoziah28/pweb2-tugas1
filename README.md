@@ -87,6 +87,7 @@ kodingan lengkapnuya:
               echo $mahasiswa1->tampilkanData();
               ?>
 
+
  <img width="388" alt="job1" src="https://github.com/user-attachments/assets/a8443dcc-9436-437c-91f4-17fdf526a8ae">
 
 # Tugas 1 Modul 1 & 2
@@ -145,7 +146,11 @@ Menampilkan Data:
                      ?>
 
 Outputnya :
+
 <img width="384" alt="tgs1" src="https://github.com/user-attachments/assets/6c4c8163-09f4-4e98-8963-5dbffaff0bfa">
+
+
+
 
 
 # Jobsheet2
@@ -207,6 +212,7 @@ kodingannya:
                     ?>
 
 outputnya :
+
 <img width="404" alt="j1" src="https://github.com/user-attachments/assets/4a57a438-0b8c-4d0f-8fee-ca7fbfb693b0">
 
 # encapsulation
