@@ -147,8 +147,69 @@ Menampilkan Data:
 Outputnya :
 <img width="384" alt="tgs1" src="https://github.com/user-attachments/assets/6c4c8163-09f4-4e98-8963-5dbffaff0bfa">
 
-          
-          
+
+# Jobsheet2
+ # class & object
+ Definisi Kelas Mahasiswa:
+
+          class Mahasiswa: Mendefinisikan kelas dengan nama Mahasiswa. Kelas ini berfungsi untuk mendefinisikan blueprint untuk objek mahasiswa.
+          Properti (Atribut):
+
+          public $nama: Menyimpan nama mahasiswa. Dengan aksesibilitas public, properti ini dapat diakses dari mana saja, baik dari dalam maupun luar kelas.
+          public $nim: Menyimpan Nomor Induk Mahasiswa (NIM). Juga dapat diakses dari luar kelas.
+          public $jurusan: Menyimpan jurusan mahasiswa. Dapat diakses dari luar kelas.
+
+ Konstruktor:
+
+          public function __construct($nama, $nim, $jurusan):
+          Ini adalah metode khusus yang dijalankan ketika objek Mahasiswa dibuat.
+          Parameter $nama, $nim, dan $jurusan digunakan untuk menginisialisasi properti objek.
+          $this->nama, $this->nim, dan $this->jurusan diatur dengan nilai parameter yang diterima.
+
+Metode tampilData:
+
+          public function tampilData():
+          Metode ini mengembalikan string yang berisi informasi tentang mahasiswa dalam format HTML.
+          Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
+
+Metode tampilData:
+
+          public function tampilData():
+          Metode ini mengembalikan string yang berisi informasi tentang mahasiswa dalam format HTML.
+          Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
+
+
+kodingannya:
+                    <?php
+                    //membuat class mahasiswa
+                        class Mahasiswa {
+                              /*atribut atau properties berfungsi menyimpan
+                              data atau keadaan dari objek*/
+                              public $nama; //aksesbilitas PUBLIC bisa diakses dari mana saja
+                              public $nim; 
+                              public $jurusan; 
+                        //construct berfungi Menginisialisasi atribut atau preoperty nama, nim, jurusan
+                               public function __construct($nama, $nim, $jurusan){
+                              $this->nama = $nama;
+                              $this->nim = $nim;
+                              $this->jurusan = $jurusan;
+                    }
+
+                              //metode atau function agar bisatampilData
+                               public function tampilData(){
+                                      return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
+                                  }
+                              }
+                              //instansiasi objek mahasiswa1
+                              $mahasiswa1 = new Mahasiswa("Anisa", "230302075", "komputer dan bisnis");
+                              //menampilkan informasi tentang objek 
+                              echo $mahasiswa1->tampilData(); //output : Nama: Anisa, NIM: 230302075, Jurusan: komputer dan bisnis
+                    ?>
+
+outputnya :
+<img width="404" alt="j1" src="https://github.com/user-attachments/assets/4a57a438-0b8c-4d0f-8fee-ca7fbfb693b0">
+
+
 
 
 
