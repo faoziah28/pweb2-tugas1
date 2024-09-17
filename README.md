@@ -175,7 +175,7 @@ Metode tampilData:
 Metode tampilData:
 
           public function tampilData():
-          Metode ini mengembalikan string yang berisi informasi tentang mahasiswa dalam format HTML.
+          
           Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
 
 
@@ -209,9 +209,35 @@ kodingannya:
 outputnya :
 <img width="404" alt="j1" src="https://github.com/user-attachments/assets/4a57a438-0b8c-4d0f-8fee-ca7fbfb693b0">
 
+# encapsulation
+Definisi Kelas Mahasiswa:
 
+           class Mahasiswa: Mendefinisikan kelas Mahasiswa yang berfungsi untuk mengelola data mahasiswa.
+           
+Properti (Atribut):
 
+          private $nama: Menyimpan nama mahasiswa. private berarti properti ini hanya dapat diakses dari dalam kelas Mahasiswa.
+          private $nim: Menyimpan Nomor Induk Mahasiswa (NIM). Juga hanya dapat diakses dari dalam kelas.
+          private $jurusan: Menyimpan jurusan mahasiswa. Juga hanya dapat diakses dari dalam kelas.
 
+Konstruktor:
+
+          public function __construct($nama, $nim, $jurusan):
+          Konstruktor ini dijalankan saat objek Mahasiswa dibuat.
+          Menginisialisasi properti nama, nim, dan jurusan dengan nilai yang diberikan saat pembuatan objek.
+Metode Getter:
+
+          public function getNama():
+          Mengembalikan nilai dari properti nama.
+          public function getNim():
+          Mengembalikan nilai dari properti nim.
+          public function getJurusan():
+          Mengembalikan nilai dari properti jurusan.
+          
+Metode Setter:
+
+          public function setNama($nama):
+Mengatur atau mengubah nilai dari properti nama.
 
 
 
