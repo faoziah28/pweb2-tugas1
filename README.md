@@ -85,7 +85,40 @@ kodingan lengkapnuya:
               $mahasiswa1->setNim("123456");
               echo "<br>";
               echo $mahasiswa1->tampilkanData();
-?>
+              ?>
+
+ <img width="388" alt="job1" src="https://github.com/user-attachments/assets/a8443dcc-9436-437c-91f4-17fdf526a8ae">
+
+# Tugas 1 Modul 1 & 2
+Definisi Kelas Dosen:
+                    class Dosen berfungsi Mendefinisikan kelas dengan nama Dosen.
+                    <?php
+                              //Membuat Kelas Dosen
+                              class Dosen {
+                              
+Properti:
+
+          public $nama yaitu untuk Menyimpan nama dosen.
+          public $nip yaitu  untuk Menyimpan Nomor Induk Pegawai (NIP) dosen.
+          public $matakuliah yaitu untuk Menyimpan nama mata kuliah yang diampu dosen.
+
+Konstruktor:
+
+          public function __construct($nama, $nip, $matakuliah):
+          Ini adalah metode khusus yang dijalankan saat objek dari kelas Dosen dibuat.
+          Parameter $nama, $nip, dan $matakuliah diisi dengan nilai yang diberikan saat objek dibuat dan digunakan untuk menginisialisasi properti kelas.
+          $this->nama, $this->nip, dan $this->matakuliah diatur untuk menyimpan nilai parameter yang diterima.
+          
+Metode tampilkanDosen:
+
+          public function tampilkanDosen():
+          
+instansiasi Objek:
+          $Dosen1 = new Dosen("Anisa", "230302075", "Desain Interaksi Pengguna");:
+          Membuat objek baru dari kelas Dosen dengan nama "Anisa", NIP "230302075", dan mata kuliah "Desain Interaksi Pengguna".
+          Nilai-nilai ini dioper ke konstruktor untuk menginisialisasi properti objek.
+          
+
 
 
 
