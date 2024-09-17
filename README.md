@@ -123,26 +123,26 @@ Menampilkan Data:
           echo $Dosen1->tampilkanDosen();:
           Memanggil metode tampilkanDosen pada objek $Dosen1 untuk mendapatkan string yang berisi informasi dosen dan menampilkannya di browser.
  kodingan Tugas 1 modul 1 & 2
-          <?php
-                    //Membuat Kelas Dosen
-                    class Dosen {
-                              public $nama;
-                              public $nip;
-                              public $matakuliah;
+                    <?php
+                              //Membuat Kelas Dosen
+                              class Dosen {
+                                        public $nama;
+                                        public $nip;
+                                        public $matakuliah;
 
-                              public function __construct($nama, $nip, $matakuliah) {
-                                       $this->nama = $nama;
-                                       $this->nip = $nip;
-                                       $this->matakuliah =$matakuliah;
-                              }
+                                        public function __construct($nama, $nip, $matakuliah) {
+                                                 $this->nama = $nama;
+                                                 $this->nip = $nip;
+                                                 $this->matakuliah =$matakuliah;
+                                        }
     
-                              public function tampilkanDosen() {
-                              return "Nama : $this->nama <br>dengan NIP $this->nip <br>Matakuliah: $this->matakuliah.";
-                              }
-                    }
-                    $Dosen1 = new Dosen ("Anisa", "230302075", "Desain Interaksi Pengguna");
-                    echo $Dosen1->tampilkanDosen();
-          ?>
+                                        public function tampilkanDosen() {
+                                        return "Nama : $this->nama <br>dengan NIP $this->nip <br>Matakuliah: $this->matakuliah.";
+                                        }
+                                        }
+                                        $Dosen1 = new Dosen ("Anisa", "230302075", "Desain Interaksi Pengguna");
+                                        echo $Dosen1->tampilkanDosen();
+                     ?>
 
 <img width="384" alt="tgs1" src="https://github.com/user-attachments/assets/6c4c8163-09f4-4e98-8963-5dbffaff0bfa">
 
