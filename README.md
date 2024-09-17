@@ -306,4 +306,78 @@ kodingan encapsulation:
                                         ?>
 
 
+          Outputnya:
+          <img width="356" alt="j2 1" src="https://github.com/user-attachments/assets/a04140bd-e811-4dc4-9401-458165a29a14">
+
+
+# inheritance pd jobsheet 1
+          1. Kelas Pengguna
+                              class Pengguna {
+                                  protected $nama; // Atribut nama
+
+                                  // Konstruktor kelas Pengguna
+                                  public function __construct($nama) {
+                                      $this->nama = $nama;
+                                  }
+
+                                  // Metode getter nama
+                                  public function getNama() {
+                                      return $this->nama;
+                                  }
+                              }
+           Atribut protected $nama: Menyimpan nama pengguna. protected berarti atribut ini dapat diakses oleh kelas Pengguna dan kelas yang mewarisinya, tapi tidak dapat diakses langsung dari luar kelas.
+
+          Konstruktor __construct($nama): Metode ini dijalankan otomatis ketika objek Pengguna dibuat. Konstruktor ini menginisialisasi atribut nama dengan nilai yang diberikan saat objek dibuat.
+
+Metode getNama(): Mengembalikan nilai dari atribut nama. Ini adalah metode getter yang memungkinkan akses kontrol terhadap data nama.
+
+2. Kelas Dosen
+                    class Dosen extends Pengguna {
+                        private $matakuliah;
+
+                        // Konstruktor untuk kelas Dosen
+                        public function __construct($nama, $matakuliah) {
+                            parent::__construct($nama); // Memanggil konstruktor kelas induk
+                            $this->matakuliah = $matakuliah;
+                        }
+
+                        public function getMatakuliah() {
+                            return $this->matakuliah;
+                        }
+          
+                        public function tampilkanDosen() {
+                            // Menggunakan metode getter getNama() untuk mengakses nama dari kelas induk
+                            return "Nama : " . $this->getNama() . "<br> Mata Kuliah : " . $this->matakuliah;
+                        }
+                    }
+
+   Atribut private $matakuliah: Menyimpan mata kuliah yang diajarkan oleh dosen. private berarti atribut ini hanya dapat diakses di dalam kelas Dosen.
+
+Konstruktor __construct($nama, $matakuliah):
+
+Memanggil konstruktor kelas induk Pengguna menggunakan parent::__construct($nama) untuk menginisialisasi atribut nama.
+Menginisialisasi atribut matakuliah dengan nilai yang diberikan saat objek Dosen dibuat.
+Metode getMatakuliah(): Mengembalikan nilai dari atribut matakuliah.
+
+Metode tampilkanDosen():
+
+Menggunakan metode getter getNama() dari kelas induk Pengguna untuk mendapatkan nama dosen.
+Menyusun dan mengembalikan string yang menampilkan nama dan mata kuliah dosen.
+
+
+3. Instansiasi dan Penggunaan
+                                       $dosen1 = new Dosen("Anisa", "DIP");
+
+                                        // Menampilkan informasi tentang objek
+                                        echo $dosen1->tampilkanDosen();
+
+   instansiasi:
+
+$dosen1 = new Dosen("Anisa", "DIP");: Membuat objek baru dari kelas Dosen dengan nama "Anisa" dan mata kuliah "DIP". Ini memanggil konstruktor __construct dari kelas Dosen, yang pada gilirannya memanggil konstruktor dari kelas Pengguna.
+Menampilkan Informasi:
+
+echo $dosen1->tampilkanDosen();: Memanggil metode tampilkanDosen() pada objek $dosen1 untuk menampilkan informasi tentang dosen.
+
+
+
 
