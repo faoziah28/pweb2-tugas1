@@ -88,7 +88,12 @@ kodingan lengkapnuya:
               ?>
 
 
- <img width="388" alt="job1" src="https://github.com/user-attachments/assets/a8443dcc-9436-437c-91f4-17fdf526a8ae">
+
+
+
+              
+
+<img width="388" alt="job1" src="https://github.com/user-attachments/assets/a8443dcc-9436-437c-91f4-17fdf526a8ae">
 
 # Tugas 1 Modul 1 & 2
 Definisi Kelas Dosen:
@@ -138,14 +143,22 @@ Menampilkan Data:
                                         }
     
                                         public function tampilkanDosen() {
-                                        return "Nama : $this->nama <br>dengan NIP $this->nip <br>Matakuliah: $this->matakuliah.";
+                                        return "Nama : $this->nama <br>dengan NIP $this->nip <br>Matakuliah:                                                             $this>matakuliah.";
                                         }
                                         }
                                         $Dosen1 = new Dosen ("Anisa", "230302075", "Desain Interaksi Pengguna");
                                         echo $Dosen1->tampilkanDosen();
                      ?>
 
+
+
+
+
+
 Outputnya :
+
+
+
 
 <img width="384" alt="tgs1" src="https://github.com/user-attachments/assets/6c4c8163-09f4-4e98-8963-5dbffaff0bfa">
 
