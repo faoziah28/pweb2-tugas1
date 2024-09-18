@@ -65,7 +65,7 @@ abstract class jurnal {
     abstrak dan harus di implementasikan dalam kelas turunannya*/
     abstract public function getJurnal();
 }
-//class jurnaldosen yang mewarisi dari jurnal
+//class jurnaldosen diwarisi dari kelas jurnal
 class JurnalDosen extends jurnal{
     //property dosen
     private $dosen;
@@ -75,17 +75,17 @@ class JurnalDosen extends jurnal{
         $this->dosen = $dosen;
     }
 
-    //implementasi metode getJurnal() dari class abstrak Jurnal
+    //metode getJurnal() dari class abstrak Jurnal
     public function getJurnal() {
         return "Jurnal Dosen: $this->dosen .";
     }
 }
-//class JurnalMahasiswa yang mewarisi class Jurnal
+//class JurnalMahasiswa diwarisi class Jurnal
 class JurnalMahasiswa extends jurnal {
     //property mahasiswa
     private $mahasiswa;
 
-    //inisialisasi property mahasiswa
+    //inisialisasi property dari mahasiswa
     public function __construct($mahasiswa){
         $this->mahasiswa = $mahasiswa;
     }
@@ -95,21 +95,21 @@ class JurnalMahasiswa extends jurnal {
         return "Jurnal mahasiswa: $this->mahasiswa .";
     }
 }
-//instansiasi objek
-$dosen1 = new Dosen("Anisa", "222");
-$mahasiswa = new Mahasiswa("Faoziah", "TI 2D");
+//instansiasi objek yang ada
+$dsn = new Dosen("Anisa", "222");
+$mhs = new Mahasiswa("Faoziah", "TI 2D");
 $dosen = new JurnalDosen("Bahasa Indonesia" );
-$mahasiswa1 = new JurnalMahasiswa("Sistem Operasi");
+$mahasiswa = new JurnalMahasiswa("Literasi Bahasa Indonesia");
 
-//pemanggilan method untuk dosen
-echo "Dosen:" . $dosen1->getName() . "<br>";
-echo "NIDN: " . $dosen1->getNidn() . "<br>";
-echo "Data: " . $dosen1->getRole() . "<br>";
+//memanggil method untuk dosen
+echo "Dosen:" . $dsn->getName() . "<br>";
+echo "NIDN: " . $dsn->getNidn() . "<br>";
+echo "Data: " . $dsn->getRole() . "<br>";
 echo $dosen->getJurnal() . "<br>"."<br>";
 
-//pemanggilan method untuk mahasiswa
-echo "Mahasiswa: " . $mahasiswa->getName() . "<br>";
-echo "NIM: " . $mahasiswa->getNim() . "<br>";
-echo "Data: " . $mahasiswa->getRole() . "<br>";
-echo $mahasiswa1->getJurnal() . "<br>";
+//memanggil method untuk mahasiswa
+echo "Mahasiswa: " . $mhs->getName() . "<br>";
+echo "NIM: " . $mhs->getNim() . "<br>";
+echo "Data: " . $mhs->getRole() . "<br>";
+echo $mahasiswa->getJurnal() . "<br>";
 ?>
