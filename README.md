@@ -1090,3 +1090,123 @@ class Student{
 
 Output:
 <img width="356" alt="encapsulasij3" src="https://github.com/user-attachments/assets/8e5a11e1-a0de-4f69-bf2d-f30e0628c8de">
+
+# 4. abstraction
+1. Membuat Kelas Abstrak Course
+
+          abstract class Course {
+              abstract public function getCourseDetails();
+          }
+   
+Kelas abstrak Course didefinisikan dengan satu metode abstrak, yaitu getCourseDetails().
+Kelas abstrak adalah kelas yang tidak dapat diinstansiasi secara langsung. Metode abstrak di dalamnya harus diimplementasikan oleh kelas turunan.
+
+3. Kelas OnlineCourse yang Mewarisi Course
+
+          class OnlineCourse extends Course{
+              private $pengajar;
+              private $matakuliah;
+    
+              public function __construct($pengajar, $matakuliah){
+                  $this->pengajar = $pengajar;
+                  $this->matakuliah = $matakuliah;
+              }
+
+              public function getCourseDetails() {
+                  return "Online Course dengan pengajar: $this->pengajar dan matkul $this->matakuliah.";
+              }
+          }
+
+Kelas OnlineCourse mewarisi dari kelas abstrak Course.
+Properti private $pengajar dan $matakuliah diinisialisasi melalui konstruktor.
+Metode getCourseDetails() diimplementasikan untuk menampilkan rincian kursus online, sesuai dengan apa yang ditetapkan di kelas abstrak.
+
+4. Kelas OfflineCourse yang Mewarisi Course
+
+          class OfflineCourse extends Course {
+              private $tempat;
+              private $hari;
+    
+              public function __construct($tempat, $hari){
+                  $this->tempat = $tempat;
+                  $this->hari = $hari;
+              }
+
+              public function getCourseDetails() {
+                  return "Offline Course dengan tempat: $this->tempat dan hari $this->hari.";
+                        }
+          }
+Kelas OfflineCourse juga mewarisi kelas abstrak Course.
+Properti private $tempat dan $hari diinisialisasi dengan konstruktor.
+Metode getCourseDetails() diimplementasikan untuk menampilkan rincian kursus offline, mirip dengan OnlineCourse.
+
+5. Instansiasi Objek dan Pemanggilan Metode
+
+          $online = new OnlineCourse("Anis", "pweb");
+          $offline = new OfflineCourse("Bimbel DPC", "kamis");
+
+          echo $online->getCourseDetails() . "<br>";
+          echo $offline->getCourseDetails();
+          
+Dua objek dibuat: satu untuk kelas OnlineCourse dan satu lagi untuk OfflineCourse.
+Objek $online diciptakan dengan pengajar "Anis" dan matakuliah "pweb".
+Objek $offline diciptakan dengan tempat "Bimbel DPC" dan hari "Kamis".
+
+Metode getCourseDetails() dipanggil untuk masing-masing objek, yang akan menampilkan rincian kursus sesuai dengan tipe kursusnya.
+
+Kodingan :
+                    <?php
+                    //class abstrak
+                    abstract class Course {
+                        abstract public function getCourseDetails();
+                    }
+                    //kelas onlinecourse diwarisi dari kelas Course
+                    class OnlineCourse extends Course{
+                        //property class onlinecourse yang private pengajar dan matkul
+                        private $pengajar;
+                        private $matakuliah;
+
+                        //menginisialisasi property pengajar dan matkul oleh construct
+                        public function __construct($pengajar, $matakuliah){
+                            $this->pengajar = $pengajar;
+                            $this->matakuliah = $matakuliah;
+                        }
+
+                        //implementasi metode getCourseDetails() berasal dari class abstrak course
+                        public function getCourseDetails() {
+                            return "Online Course dengan pengajar: $this->pengajar dan matkul $this->matakuliah.";
+                        }
+                    }
+                    //class offlinecourse diwarisi class course
+                              class OfflineCourse extends Course {
+                                  //property yang di privat
+                                  private $tempat;
+                                  private $hari;
+
+                                   //menginisialisasi property tempat dan hari oleh construct
+                                  public function __construct($tempat, $hari){
+                                      $this->tempat = $tempat;
+                                      $this->hari = $hari;
+                                  }
+
+                                  //penerapan metode getCourseDetails() berasal class abstrak course
+                                  public function getCourseDetails() {
+                                      return "Online Course dengan tempat: $this->tempat dan hari $this->hari.";
+                                  }
+                              }
+                              //instansiasi objek dari class Onlinecourse
+                              $online = new OnlineCourse("Anis", "pweb");
+                              //instansiasi objek dari class Offlinecourse
+                              $offline = new OfflineCourse("Bimbel DPC", "kamis");
+                              //memanggil metode getCourseDetails() asalnya objek online dan offline
+                              echo $online->getCourseDetails() . "<br>";
+                              echo $offline->getCourseDetails();
+
+                              ?>
+
+output:
+<img width="359" alt="abstraction j3" src="https://github.com/user-attachments/assets/d4aec5d6-2fde-4f4e-b7ce-4db8d9d40065">
+
+
+
+
