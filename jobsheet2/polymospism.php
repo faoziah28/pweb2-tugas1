@@ -25,30 +25,30 @@ class Dosen extends Pengguna {
 
     //implementasi metode aksesFitur
     public function aksesFitur(){
-        return "Dosen $this->nama mengampu $this->matkul";
+        return "Nama Dosen $this->nama mengampu $this->matkul";
     }
 }
 //class Mahasiswa yang mewarisi class Pengguna
 class Mahasiswa extends Pengguna {
-    private $ID; //property ID yang private
+    private $Id_Mhs; //property Id_Mhs pakai private
    
-    //constructor untuk menginisialisasi ID dan nama
-    public function __construct ($nama, $ID){
+    //constructor untuk memberikan isnisialisasi Id_Mhs dan nama
+    public function __construct ($nama, $Id_Mhs){
         $this->nama = $nama;
-        $this->ID = $ID;
+        $this->Id_Mhs = $Id_Mhs;
     }
 
     //implementasi metode aksesFitur
     public function aksesFitur(){
-        return "Nama $this->nama dengan ID $this->ID ";
+        return "Nama $this->nama dengan Id Mahasiswa $this->Id_Mhs ";
     }
 }
 
 // instansi objek dari class dosen dan mahasiswa
-$dosen = new Dosen("Santi", "DIP");
-$mahasiswa = new Mahasiswa("Anisa", "230302075");
+$dosenbaru = new Dosen("Santi", "DIP");
+$mhsbaru = new Mahasiswa("Anisa", "230302075");
 
 //pemanggilan metode aksesFitur
-echo $dosen->aksesFitur() . "<br>"; //Menampilkan Output dosen
-echo $mahasiswa->aksesFitur(); //menampilkan output mahasiswa
+echo $dosenbaru->aksesFitur() . "<br>"; //Menampilkan Output dosen
+echo $mhsbaru->aksesFitur(); //menampilkan output mahasiswa
 ?>
