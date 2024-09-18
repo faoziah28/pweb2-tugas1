@@ -326,8 +326,8 @@ kodingan encapsulation:
                                         ?>
 
 
-          Outputnya:
-          <img width="356" alt="j2 1" src="https://github.com/user-attachments/assets/a04140bd-e811-4dc4-9401-458165a29a14">
+Outputnya:
+<img width="356" alt="j2 1" src="https://github.com/user-attachments/assets/a04140bd-e811-4dc4-9401-458165a29a14">
 
 
 # inheritance pd jobsheet 1
