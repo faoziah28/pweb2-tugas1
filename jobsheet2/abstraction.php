@@ -27,7 +27,7 @@ $dosen = new Dosen ();
 echo $dosen->aksesFitur() . "<br>";
 
 // Instansiasi objek kelas Mahasiswa
-$mahasiswa1 = new Mahasiswa();
+$mhs = new Mahasiswa();
 // Menampilkan output dari methode aksesFitur
-echo $mahasiswa1->aksesFitur();
+echo $mhs->aksesFitur();
 ?>
