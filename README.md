@@ -611,7 +611,7 @@ Kodingan Polymorpism.php
                               echo $mhsbaru->aksesFitur(); //menampilkan output mahasiswa
                      ?>
                      
-
+Outputnya:
 <img width="283" alt="pj2" src="https://github.com/user-attachments/assets/98c0e913-9cec-4afe-b253-e82b6fc8902a">
 
 # Abstraction jobsheet 2
@@ -1209,7 +1209,7 @@ Kodingan :
 output:
 <img width="359" alt="abstraction j3" src="https://github.com/user-attachments/assets/d4aec5d6-2fde-4f4e-b7ce-4db8d9d40065">
 
-# Tugas
+# Tugas Modul 5 & 6
 1. Kelas Person (Kelas Induk)
 
           class Person {
