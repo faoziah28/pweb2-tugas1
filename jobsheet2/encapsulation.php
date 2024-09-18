@@ -1,64 +1,64 @@
 <?php
 //definisi class 
 class Mahasiswa {
-    private $nama; //Private hanya dapat diakses dalam kelas itu sendiri.
+    private $nama; //Private hanya bisa diakses oleh kelasnya
     private $nim;
     private $jurusan;
 
-    //constructor untuk menginisialisasi atribut
+    //constructor memberikasn inisialisasi pada atribut
     public function __construct($nama, $nim, $jurusan){
         $this->nama = $nama;
         $this->nim = $nim;
         $this->jurusan = $jurusan;
     }
 
-    //metode getter untuk nama
+    // menggunakan metode getter nama
     public function getNama(){
         return $this->nama;
     }
 
-    //metode getter untuk nim
+    //menggunakan  getter untuk nim
     public function getNim(){
         return $this->nim;
     }
 
-    //metode getter untuk jurusan
+    //menggunakan metode getter untuk jurusan
     public function getJurusan(){
         return $this->jurusan;
     }
 
-    //metode setter nama
+    // menggunakan metode setter nama
     public function setNama($nama){
         $this->nama = $nama;
     }
 
-    //metode setter nim
+    // menggunkan metode setter pada nim
     public function setNim($nim){
         $this->nim = $nim;
     }
 
-    //metode setter untuk jurusan
+    //menggunakan metode setter untuk jurusan
     public function setJurusan($jurusan){
         $this->jurusan = $jurusan;
     }
 }
 // instansiasi objek berasal dari class mahasiswa
-$mahasiswa1 = new Mahasiswa ("Anisatun Faoziah", "230302075", "komputer dan bisnis");
+$mhs = new Mahasiswa ("Anisatun Faoziah", "230302075", "komputer dan bisnis");
 
-//Menampilkan data awal dengan memanggil metode getter 
-echo "Data Awal : \n<br>";
-echo "Mahasiswa: " . $mahasiswa1->getNama() . "<br>";
-echo "NIM: " . $mahasiswa1->getNim() . "<br>";
-echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+//Menampilkan data Pertama dengan memanggil metode getter 
+echo "Data Pertama : \n<br>";
+echo "Mahasiswa: " . $mhs->getNama() . "<br>";
+echo "NIM: " . $mhs->getNim() . "<br>";
+echo "Jurusan: " . $mhs->getJurusan() . "<br>";
 
 //mengubah data dengan metode setter
-$mahasiswa1->setNama("sania");
-$mahasiswa1->setNim("8888");
-$mahasiswa1->setJurusan("Teknik Sipil");
+$mhs->setNama("sania");
+$mhs->setNim("8888");
+$mhs->setJurusan("Teknik Sipil");
 
-//tampilkan data yang sudah diubah dengan metode getter.
+//tampilkan data kedua setelah diubah dengan metode getter.
 echo "<br>\nData Setelah Diubah : \n<br>";
-echo "Mahasiswa: " . $mahasiswa1->getNama() . "<br>";
-echo "NIM: " . $mahasiswa1->getNim() . "<br>";
-echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+echo "Mahasiswa: " . $mhs->getNama() . "<br>";
+echo "NIM: " . $mhs->getNim() . "<br>";
+echo "Jurusan: " . $mhs->getJurusan() . "<br>";
 ?>
