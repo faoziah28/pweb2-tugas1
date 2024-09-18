@@ -1207,6 +1207,257 @@ Kodingan :
 output:
 <img width="359" alt="abstraction j3" src="https://github.com/user-attachments/assets/d4aec5d6-2fde-4f4e-b7ce-4db8d9d40065">
 
+# Tugas
+1. Kelas Person (Kelas Induk)
+
+          class Person {
+              protected $name; // Dapat diakses oleh kelas itu sendiri dan kelas turunan.
+    
+              public function __construct($name){
+                  $this->name = $name;
+              }
+    
+              public function getName(){
+                  return $this->name;
+              }
+
+              public function getRole(){
+                  return "Data lengkap";
+              }
+          }
+Kelas Person adalah kelas dasar dengan properti name yang dilindungi (protected).
+Konstruktor digunakan untuk menginisialisasi properti name.
+Metode getName() untuk mendapatkan nama.
+Metode getRole() memberikan informasi umum dan dapat di-override oleh kelas turunan.
+
+3. Kelas Dosen (Kelas Turunan dari Person)
+
+          class Dosen extends Person {
+              private $nidn; // Properti `nidn` yang private.
+
+              public function __construct($name, $nidn){
+                  parent::__construct($name);
+                  $this->nidn = $nidn;
+              }
+
+              public function getRole(){
+                return "Dosen: $this->name, NIDN: $this->nidn ";
+              }
+
+              public function getNidn(){
+                  return $this->nidn;
+              }
+          }
+
+Kelas Dosen mewarisi dari Person.
+Properti nidn adalah private, artinya hanya dapat diakses dari dalam kelas Dosen.
+Konstruktor menginisialisasi name dan nidn.
+Metode getRole() di-override untuk menampilkan informasi khusus dosen.
+Metode getNidn() untuk mendapatkan nidn.
+
+4. Kelas Mahasiswa (Kelas Turunan dari Person)
+
+          class Mahasiswa extends Person {
+              private $nim; // Properti `nim` yang private.
+
+              public function __construct($name, $nim){
+                  parent::__construct($name);
+                  $this->nim = $nim;
+              }
+
+              public function getRole(){
+                  return "Mahasiswa: $this->name, NIM: $this->nim";
+              }
+
+              public function getNim(){
+                  return $this->nim;
+              }
+          }
+Kelas Mahasiswa juga mewarisi dari Person.
+Properti nim adalah private.
+Konstruktor menginisialisasi name dan nim.
+Metode getRole() di-override untuk menampilkan informasi khusus mahasiswa.
+Metode getNim() untuk mendapatkan nim.
+4. Kelas Abstrak jurnal
+
+          abstract class jurnal {
+              abstract public function getJurnal();
+          }
+   
+Kelas jurnal adalah kelas abstrak yang tidak dapat diinstansiasi langsung.
+Memiliki metode abstrak getJurnal() yang harus diimplementasikan oleh kelas turunannya.
+
+6. Kelas JurnalDosen (Kelas Turunan dari jurnal)
+
+          class JurnalDosen extends jurnal {
+              private $dosen;
+
+              public function __construct($dosen){
+                  $this->dosen = $dosen;
+              }
+
+              public function getJurnal() {
+                        return "Jurnal Dosen: $this->dosen .";
+              }
+          }
+   
+Kelas JurnalDosen mewarisi dari jurnal.
+Properti dosen diinisialisasi melalui konstruktor.
+Metode getJurnal() diimplementasikan untuk menampilkan informasi tentang jurnal dosen.
+
+7. Kelas JurnalMahasiswa (Kelas Turunan dari jurnal)
+
+          class JurnalMahasiswa extends jurnal {
+              private $mahasiswa;
+
+              public function __construct($mahasiswa){
+                  $this->mahasiswa = $mahasiswa;
+              }
+
+              public function getJurnal() {
+                  return "Jurnal mahasiswa: $this->mahasiswa .";
+              }
+          }
+Kelas JurnalMahasiswa juga mewarisi dari jurnal.
+Properti mahasiswa diinisialisasi melalui konstruktor.
+Metode getJurnal() diimplementasikan untuk menampilkan informasi tentang jurnal mahasiswa.
+
+8. Instansiasi dan Penggunaan Objek
+
+          $dsn = new Dosen("Anisa", "222");
+          $mhs = new Mahasiswa("Faoziah", "TI 2D");
+          $dosen = new JurnalDosen("Bahasa Indonesia");
+          $mahasiswa = new JurnalMahasiswa("Literasi Bahasa Indonesia");
+
+          // Output untuk objek Dosen
+          echo "Dosen: " . $dsn->getName() . "<br>";
+          echo "NIDN: " . $dsn->getNidn() . "<br>";
+          echo "Data: " . $dsn->getRole() . "<br>";
+          echo $dosen->getJurnal() . "<br><br>";
+
+          // Output untuk objek Mahasiswa
+                    echo "Mahasiswa: " . $mhs->getName() . "<br>";
+                    echo "NIM: " . $mhs->getNim() . "<br>";
+                    echo "Data: " . $mhs->getRole() . "<br>";
+                    echo $mahasiswa->getJurnal() . "<br>";
+Instansiasi objek untuk Dosen, Mahasiswa, JurnalDosen, dan JurnalMahasiswa.
+Metode getName(), getNidn(), getRole() dipanggil untuk objek Dosen.
+Metode getName(), getNim(), getRole() dipanggil untuk objek Mahasiswa.
+Metode getJurnal() dipanggil untuk objek JurnalDosen dan JurnalMahasiswa.
 
 
+Kodingan lengkapnya:
+                     <?php
+                              //class parent
+                              class Person {
+                                            protected $name; //Dapat diakses oleh kelas itu sendiri dan kelas turunan.
+         
+                                            //construct untuk menginisialisasi property name
+                                         public function __construct($name){
+                                                $this->name = $name;
+                                          }
+    
+                                            //method untuk mendapatkan name 
+                                            public function getName(){
+                                                return $this->name;
+                                            }
+                    
+                                            //menggunakan metode getRole
+                                           public function getRole(){
+                                           return "Data lengkap";
+                                            }
+                                                  } 
+                                        //class dosen diwarisi dari person
+                                        class Dosen extends Person {
+                                                      private $nidn; //property nidn yang private
+
+                                                      //inisialisasi property name dan nidn
+                                                      public function __construct($name, $nidn){
+                                                          parent::__construct($name);
+                                                                              $this->nidn = $nidn;
+                                                      }
+
+                                            //override mengembalikan string dengan format khusus 
+                                            public function getRole(){
+                                                          return "Dosen: $this->name, NIDN: $this->nidn ";
+                                                      }
+
+                                            // Metode agar mendapatkan nidn
+                                            public function getNidn(){
+                                                          return $this->nidn;
+                                            }
+                                        }
+                                        //class mahasiswa diwarisi dari person
+                    class Mahasiswa extends Person {
+                                  //property nim yang private
+                                  private $nim;
+
+                                  //inisialisasi property name dan nim
+                                  public function __construct($name, $nim){
+                                      parent::__construct($name);
+                                      $this->nim = $nim;
+                                  }
+
+                                  //override agar mengembalikan string dengan format khusus 
+                                  public function getRole(){
+                                      return "Mahasiswa: $this->name, NIM: $this->nim";
+                                  }
+
+                                  // Metode untuk memperoleh nim
+                                  public function getNim(){
+                                      return $this->nim;
+                                  }
+                    }
+                    // buat class abstrak Jurnal
+                    abstract class jurnal {
+                              abstract public function getJurnal();
+                              }
+                    //class jurnaldosen diwarisi dari kelas jurnal
+                    class JurnalDosen extends jurnal{
+                                  //property dosen
+                                  private $dosen;
+
+                                  //inisialisasi property dosen
+                                  public function __construct($dosen){
+                                      $this->dosen = $dosen;
+                                  }
+
+                                  //metode getJurnal() dari class abstrak Jurnal
+                                  public function getJurnal() {
+                                      return "Jurnal Dosen: $this->dosen .";
+                                            }
+                                        }
+                                //class JurnalMahasiswa diwarisi class Jurnal
+                    class JurnalMahasiswa extends jurnal {
+                                  //property mahasiswa
+                                  private $mahasiswa;
+          
+                                  //inisialisasi property dari mahasiswa
+                                  public function __construct($mahasiswa){
+                                      $this->mahasiswa = $mahasiswa;
+                                  }
+
+                        //implementasi metode getJurnal() berasal dari class abstrak Jurnal
+                        public function getJurnal() {
+                            return "Jurnal mahasiswa: $this->mahasiswa .";
+                        }
+                    }
+                    //instansiasi objek yang ada
+                    $dsn = new Dosen("Anisa", "222");
+                    $mhs = new Mahasiswa("Faoziah", "TI 2D");
+                    $dosen = new JurnalDosen("Bahasa Indonesia" );
+                    $mahasiswa = new JurnalMahasiswa("Literasi Bahasa Indonesia");
+
+                    //memanggil method untuk objek dosen
+                    echo "Dosen:" . $dsn->getName() . "<br>";
+                    echo "NIDN: " . $dsn->getNidn() . "<br>";
+                    echo "Data: " . $dsn->getRole() . "<br>";
+                    echo $dosen->getJurnal() . "<br>"."<br>";
+
+                    //memanggil method untuk objek mahasiswa
+                    echo "Mahasiswa: " . $mhs->getName() . "<br>";
+                    echo "NIM: " . $mhs->getNim() . "<br>";
+                    echo "Data: " . $mhs->getRole() . "<br>";
+                    echo $mahasiswa->getJurnal() . "<br>";
+                    ?>
 
