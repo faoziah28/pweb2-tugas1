@@ -351,75 +351,264 @@ Outputnya:
 <img width="356" alt="j2 1" src="https://github.com/user-attachments/assets/a04140bd-e811-4dc4-9401-458165a29a14">
 
 
-# inheritance pd jobsheet 1
-          1. Kelas Pengguna
+# inheritance pd jobsheet 2
+          1. Membuat Kelas Pengguna
+
+
+                                        class Pengguna {
+                                            protected $nama;
+                                            
+Di sini kita membuat class bernama Pengguna. Class ini memiliki atribut nama, yang digunakan untuk menyimpan nama pengguna.
+Kata protected artinya atribut ini hanya bisa diakses dari dalam class itu sendiri dan class yang mewarisinya (kelas turunan).
+
+2. Membuat Konstruktor untuk Pengguna
+php
+Copy code
+public function __construct($nama) {
+    $this->nama = $nama;
+}
+Constructor ini akan otomatis dipanggil ketika kita membuat objek dari kelas Pengguna. Fungsi ini menerima parameter $nama dan menyimpannya di atribut $this->nama (yaitu atribut nama di dalam objek tersebut).
+3. Metode getNama
+
+                              public function getNama() {
+                                  return $this->nama;
+                              }
+Ini adalah getter yang memungkinkan kita untuk mengambil atau mendapatkan nilai dari atribut nama. Jadi, setiap kali kita memanggil getNama(), itu akan mengembalikan nilai nama pengguna.
+
+4. Membuat Kelas Dosen yang Mewarisi Pengguna
+
+          class Dosen extends Pengguna {
+   
+Inheritance: Di sini kita membuat kelas Dosen yang mewarisi atau mengambil sifat-sifat dari kelas Pengguna. Ini berarti kelas Dosen dapat menggunakan atribut dan metode yang ada di dalam kelas Pengguna.
+5. Atribut Baru untuk Dosen
+
+                    private $matkul;
+                    
+Di dalam kelas Dosen, kita menambahkan atribut baru bernama $matkul yang akan menyimpan mata kuliah yang diajarkan oleh dosen.
+private berarti atribut ini hanya bisa diakses dari dalam kelas Dosen saja.
+
+6. Konstruktor untuk Kelas Dosen
+
+                    public function __construct($nama, $matkul) {
+                        parent::__construct($nama);
+                        $this->matakuliah = $matkul;
+                    }
+Konstruktor ini dipanggil ketika kita membuat objek dari kelas Dosen.
+parent::__construct($nama) berfungsi untuk memanggil konstruktor dari kelas induk (Pengguna), sehingga atribut nama bisa diisi.
+Kemudian, matakuliah disimpan ke dalam atribut $this->matakuliah.
+
+7. Metode getMatakuliah
+
+                    public function getMatakuliah() {
+                        return $this->matakuliah;
+                    }
+Fungsi ini digunakan untuk mengambil nilai dari atribut matakuliah, mirip seperti metode getNama() pada kelas Pengguna.
+
+8. Metode tampilkanDosen
+
+          public function tampilkanDosen() {
+              return "Nama : " . $this->getNama() . "<br> Mata Kuliah : " . $this->matakuliah;
+          }
+Metode ini digunakan untuk menampilkan data dosen, yaitu nama dan mata kuliah yang diambil dari atribut nama (melalui getNama()) dan matakuliah.
+getNama() dipanggil untuk mendapatkan nilai dari atribut nama yang diwarisi dari kelas Pengguna.
+
+9. Membuat Objek dari Kelas Dosen
+
+                    $dosennew = new Dosen("Anisa", "DIP");
+   Di sini kita membuat objek baru bernama $dosennew dari kelas Dosen.
+   Nilai "Anisa" dimasukkan ke dalam atribut nama dan "DIP" dimasukkan ke dalam atribut matakuliah.
+10. Menampilkan Informasi Dosen
+
+                    echo $dosennew->tampilkanDosen();
+Dengan memanggil metode tampilkanDosen(), kita akan menampilkan informasi dosen yaitu nama dan mata kuliah.
+
+Kodingaan inheritance.php
+                    <?php
+                    // Membuat kelas Pengguna dengan tipe inheritance yaitu kelas
+                    // bisa mewarisi properti dan metode dari kelas lain
                               class Pengguna {
                                   protected $nama; // Atribut nama
 
-                                  // Konstruktor kelas Pengguna
-                                  public function __construct($nama) {
+                                  //Penggunaan Konstruktor pd kelas pengguna
+                                            public function __construct($nama) {
+                                                          $this->nama = $nama;
+                                                   }
+
+                                            // Metode getter nama
+                                            public function getNama() {
+                                                return $this->nama;
+                                            }
+                              }
+
+                                        // Buat kelas Dosen yang mewarisi kelas Pengguna
+                                        class Dosen extends Pengguna {
+                                            private $matkul;
+
+                                            // Konstruktor untuk kelas Dosen
+                                            public function __construct($nama, $matkul) {
+                                                parent::__construct($nama); // Memanggil konstruktor kelas induk
+                                                $this->matakuliah = $matkul;
+                                                      }
+
+                                            public function getMatakuliah() {
+                                                          return $this->matakuliah;
+                                            }
+
+                                            public function tampilkanDosen() {
+                                                // Menggunakan metode getter getNama() agar dapat akses kelas induk
+                                                return "Nama : " . $this->getNama() . "<br> Mata Kuliah : " . 
+                                                $this->matakuliah;
+                                                      }
+                                                  }
+                                            // Buat objek dari kelas Dosen
+                                            $dosennew = new Dosen("Anisa", "DIP");
+
+                                            // Output tentang Objek
+                                                      echo $dosennew->tampilkanDosen();
+                                        ?>
+<img width="383" alt="ij2" src="https://github.com/user-attachments/assets/f28a7a9e-092a-4ea4-af13-f0f49d9d3ed7">
+
+
+# Polymorpism jobsheet2
+1. Membuat Kelas Pengguna
+
+                    class Pengguna {
+                        protected $nama;
+   
+Class Pengguna berfungsi sebagai kelas induk yang memiliki atribut nama. Atribut nama diatur sebagai protected, artinya bisa diakses oleh kelas ini dan kelas turunannya (kelas yang mewarisi).
+
+2. Konstruktor Kelas Pengguna
+
+                    public function __construct($nama){
+                        $this->nama = $nama;
+                    }
+Di sini kita membuat constructor yang digunakan untuk menginisialisasi atribut nama ketika sebuah objek dibuat dari kelas ini atau kelas turunannya. Saat objek dibuat, nilai yang diberikan untuk nama akan disimpan ke dalam atribut nama.
+
+3. Metode aksesFitur
+
+                    public function aksesFitur(){
+                        return $this->nama;
+                    }
+Metode ini hanya mengembalikan nilai atribut nama. Ini metode dasar yang akan di-override (diganti) oleh kelas turunan.
+
+4. Membuat Kelas Dosen yang Mewarisi Pengguna
+
+                    class Dosen extends Pengguna {
+                        private $matkul;
+   
+Kelas Dosen mewarisi sifat dari kelas Pengguna. Selain atribut nama yang diwarisi, kelas ini memiliki atribut baru matkul yang bersifat private, artinya hanya bisa diakses dari dalam kelas Dosen saja.
+
+5. Konstruktor Kelas Dosen
+
+                    public function __construct($nama, $matkul){
+                        $this->nama = $nama;
+                        $this->matkul = $matkul;
+                    }
+   
+Konstruktor ini mengambil dua parameter: nama dan matkul.
+Atribut nama diisi melalui pewarisan dari kelas Pengguna, dan atribut matkul diisi untuk menunjukkan mata kuliah yang diajarkan oleh dosen.
+6. Override Metode aksesFitur di Kelas Dosen
+
+                    public function aksesFitur(){
+                        return "Nama Dosen $this->nama mengampu $this->matkul";
+                              }
+Di sini, metode aksesFitur di-override untuk memberikan informasi yang lebih spesifik terkait dosen, yaitu nama dosen dan mata kuliah yang diajarkan.
+
+7. Membuat Kelas Mahasiswa yang Mewarisi Pengguna
+
+                              class Mahasiswa extends Pengguna {
+                                  private $Id_Mhs;
+Kelas Mahasiswa juga mewarisi dari kelas Pengguna. Selain atribut nama, ada atribut baru bernama Id_Mhs yang disimpan secara private untuk identifikasi mahasiswa.
+
+8. Konstruktor Kelas Mahasiswa
+
+                              public function __construct($nama, $Id_Mhs){
+                                  $this->nama = $nama;
+                                  $this->Id_Mhs = $Id_Mhs;
+                                 }
+Konstruktor ini digunakan untuk menginisialisasi atribut nama dan Id_Mhs ketika sebuah objek mahasiswa dibuat.
+
+10. Override Metode aksesFitur di Kelas Mahasiswa
+
+                              public function aksesFitur(){
+                                  return "Nama $this->nama dengan Id Mahasiswa $this->Id_Mhs";
+                              }
+Metode ini menampilkan informasi spesifik mengenai mahasiswa, yaitu nama dan ID Mahasiswa.
+
+10. Membuat Objek dari Kelas Dosen dan Mahasiswa
+
+                              $dosenbaru = new Dosen("Santi", "DIP");
+                              $mhsbaru = new Mahasiswa("Anisa", "230302075");
+Di sini, kita membuat dua objek:
+$dosenbaru adalah objek dari kelas Dosen dengan nama "Santi" dan mengajar mata kuliah "DIP".
+$mhsbaru adalah objek dari kelas Mahasiswa dengan nama "Anisa" dan ID Mahasiswa "230302075".
+
+11. Menampilkan Data Dosen dan Mahasiswa
+
+                              echo $dosenbaru->aksesFitur() . "<br>";
+                              echo $mhsbaru->aksesFitur();
+Kita memanggil metode aksesFitur dari objek dosen dan mahasiswa untuk menampilkan informasi mereka.
+
+
+Kodingan Polymorpism.php
+                    <?php
+                    //definisi class Pengguna
+                    class Pengguna {
+                                  protected $nama; //property protected untuk nama
+
+                                  //constructor untuk menginisialisasi nama
+                                  public function __construct($nama){
                                       $this->nama = $nama;
                                   }
 
-                                  // Metode getter nama
-                                  public function getNama() {
+                                  //metode aksesFitur 
+                                  public function aksesFitur(){
                                       return $this->nama;
                                   }
-                              }
-
-                              
-           Atribut protected $nama: Menyimpan nama pengguna. protected berarti atribut ini dapat diakses oleh kelas Pengguna dan kelas yang mewarisinya, tapi tidak dapat diakses langsung dari luar kelas.
-
-          Konstruktor __construct($nama): Metode ini dijalankan otomatis ketika objek Pengguna dibuat. Konstruktor ini menginisialisasi atribut nama dengan nilai yang diberikan saat objek dibuat.
-
-Metode getNama(): Mengembalikan nilai dari atribut nama. Ini adalah metode getter yang memungkinkan akses kontrol terhadap data nama.
-
-2. Kelas Dosen
-                    class Dosen extends Pengguna {
-                        private $matakuliah;
-
-                        // Konstruktor untuk kelas Dosen
-                        public function __construct($nama, $matakuliah) {
-                            parent::__construct($nama); // Memanggil konstruktor kelas induk
-                            $this->matakuliah = $matakuliah;
-                        }
-
-                        public function getMatakuliah() {
-                            return $this->matakuliah;
-                        }
-          
-                        public function tampilkanDosen() {
-                            // Menggunakan metode getter getNama() untuk mengakses nama dari kelas induk
-                            return "Nama : " . $this->getNama() . "<br> Mata Kuliah : " . $this->matakuliah;
-                        }
                     }
+                    //class Dosen yang mewarisi class Pengguna
+                    class Dosen extends Pengguna {
+                        private $matkul; //property matkul yang private
 
-   Atribut private $matakuliah: Menyimpan mata kuliah yang diajarkan oleh dosen. private berarti atribut ini hanya dapat diakses di dalam kelas Dosen.
+                               //constructor untuk menginisialisasi matkul dan nama
+                                  public function __construct ($nama, $matkul){
+                                      $this->nama = $nama;
+                                      $this->matkul = $matkul;
+                                  }
+          
+                                  //implementasi metode aksesFitur
+                                  public function aksesFitur(){
+                                      return "Nama Dosen $this->nama mengampu $this->matkul";
+                                  }
+                              }
+                    //class Mahasiswa yang mewarisi class Pengguna
+                     class Mahasiswa extends Pengguna {
+                                            private $Id_Mhs; //property Id_Mhs pakai private
+   
+                                            //constructor untuk memberikan isnisialisasi Id_Mhs dan nama
+                                            public function __construct ($nama, $Id_Mhs){
+                                                $this->nama = $nama;
+                                                $this->Id_Mhs = $Id_Mhs;
+                                            }
 
-Konstruktor __construct($nama, $matakuliah):
+                                            //implementasi metode aksesFitur
+                                            public function aksesFitur(){
+                                                          return "Nama $this->nama dengan Id Mahasiswa $this->Id_Mhs ";
+                                            }
+                        }
 
-Memanggil konstruktor kelas induk Pengguna menggunakan parent::__construct($nama) untuk menginisialisasi atribut nama.
-Menginisialisasi atribut matakuliah dengan nilai yang diberikan saat objek Dosen dibuat.
-Metode getMatakuliah(): Mengembalikan nilai dari atribut matakuliah.
+                                        // instansi objek dari class dosen dan mahasiswa
+                                        $dosenbaru = new Dosen("Santi", "DIP");
+                                        $mhsbaru = new Mahasiswa("Anisa", "230302075");
 
-Metode tampilkanDosen():
+                                        //pemanggilan metode aksesFitur
+                                        echo $dosenbaru->aksesFitur() . "<br>"; //Menampilkan Output dosen
+                              echo $mhsbaru->aksesFitur(); //menampilkan output mahasiswa
+                     ?>
+                     
 
-Menggunakan metode getter getNama() dari kelas induk Pengguna untuk mendapatkan nama dosen.
-Menyusun dan mengembalikan string yang menampilkan nama dan mata kuliah dosen.
+<img width="283" alt="pj2" src="https://github.com/user-attachments/assets/98c0e913-9cec-4afe-b253-e82b6fc8902a">
 
-
-3. Instansiasi dan Penggunaan
-                                       $dosen1 = new Dosen("Anisa", "DIP");
-
-                                        // Menampilkan informasi yang ada di objek
-                                        echo $dosen1->tampilkanDosen();
-
-   instansiasi:
-
-$dosen1 = new Dosen("Anisa", "DIP");: Membuat objek baru dari kelas Dosen dengan nama "Anisa" dan mata kuliah "DIP". Ini memanggil konstruktor __construct dari kelas Dosen, yang pada gilirannya memanggil konstruktor dari kelas Pengguna.
-Menampilkan Informasi:
-
-echo $dosen1->tampilkanDosen();: Memanggil metode tampilkanDosen() pada objek $dosen1 untuk menampilkan informasi tentang dosen.
-
+# Polymorpism jobsheet 2
 
 
