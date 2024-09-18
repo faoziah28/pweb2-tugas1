@@ -129,7 +129,8 @@ Menampilkan Data:
           echo $Dosen1->tampilkanDosen();:
           Memanggil metode tampilkanDosen pada objek $Dosen1 untuk mendapatkan string yang berisi informasi dosen dan menampilkannya di browser.
  kodingan Tugas 1 modul 1 & 2
-                    <?php
+ 
+                              <?php
                               //Membuat Kelas Dosen
                               class Dosen {
                                         public $nama;
@@ -148,7 +149,7 @@ Menampilkan Data:
                                         }
                                         $Dosen1 = new Dosen ("Anisa", "230302075", "Desain Interaksi Pengguna");
                                         echo $Dosen1->tampilkanDosen();
-                     ?>
+                                         ?>
 
 
 
@@ -187,7 +188,6 @@ Outputnya :
 Metode tampilData:
 
           public function tampilData():
-          Metode ini mengembalikan string yang berisi informasi tentang mahasiswa dalam format HTML.
           Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
 
 Metode tampilData:
@@ -390,7 +390,7 @@ Menyusun dan mengembalikan string yang menampilkan nama dan mata kuliah dosen.
 3. Instansiasi dan Penggunaan
                                        $dosen1 = new Dosen("Anisa", "DIP");
 
-                                        // Menampilkan informasi tentang objek
+                                        // Menampilkan informasi yang ada di objek
                                         echo $dosen1->tampilkanDosen();
 
    instansiasi:
