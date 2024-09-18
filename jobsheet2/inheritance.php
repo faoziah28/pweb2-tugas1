@@ -1,9 +1,10 @@
 <?php
-// Membuat kelas Pengguna dengan tipe inheritance yaitu kelas bisa mewarisi properti dan metode dari kelas lain
+// Membuat kelas Pengguna dengan tipe inheritance yaitu kelas
+// bisa mewarisi properti dan metode dari kelas lain
 class Pengguna {
     protected $nama; // Atribut nama
 
-    // Konstruktor kelas Pengguna
+    //Penggunaan Konstruktor pd kelas pengguna
     public function __construct($nama) {
         $this->nama = $nama;
     }
@@ -16,12 +17,12 @@ class Pengguna {
 
 // Buat kelas Dosen yang mewarisi kelas Pengguna
 class Dosen extends Pengguna {
-    private $matakuliah;
+    private $matkul;
 
     // Konstruktor untuk kelas Dosen
-    public function __construct($nama, $matakuliah) {
+    public function __construct($nama, $matkul) {
         parent::__construct($nama); // Memanggil konstruktor kelas induk
-        $this->matakuliah = $matakuliah;
+        $this->matakuliah = $matkul;
     }
 
     public function getMatakuliah() {
@@ -29,13 +30,13 @@ class Dosen extends Pengguna {
     }
 
     public function tampilkanDosen() {
-        // Menggunakan metode getter getNama() untuk mengakses nama dari kelas induk
+        // Menggunakan metode getter getNama() agar dapat akses kelas induk
         return "Nama : " . $this->getNama() . "<br> Mata Kuliah : " . $this->matakuliah;
     }
 }
     // Buat objek dari kelas Dosen
-    $dosen1 = new Dosen("Anisa", "DIP");
+    $dosennew = new Dosen("Anisa", "DIP");
 
-    // Menampilkan informasi tentang objek
-    echo $dosen1->tampilkanDosen();
+    // Output tentang Objek
+    echo $dosennew->tampilkanDosen();
 ?>
