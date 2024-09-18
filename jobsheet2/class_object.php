@@ -18,7 +18,7 @@ class Mahasiswa {
         return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
     }
 }
-//instansiasi objek mahasiswa1
+//instansiasi objek mhs
 $mhs = new Mahasiswa("Anisa", "230302075", "komputer dan bisnis");
 //menampilkan informasi tentang objek 
 echo $mhs->tampilData(); //output : Nama: Anisa, NIM: 230302075, Jurusan: komputer dan bisnis
