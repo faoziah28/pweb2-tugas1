@@ -95,7 +95,7 @@ class JurnalMahasiswa extends jurnal {
 }
 //instansiasi objek yang ada
 $dsn = new Dosen("Anisa", "222");
-$mhs = new Mahasiswa("Faoziah", "TI 2D");
+$mhs = new Mahasiswa("Faoziah", "2303");
 $dosen = new JurnalDosen("Bahasa Indonesia" );
 $mahasiswa = new JurnalMahasiswa("Literasi Bahasa Indonesia");
 
