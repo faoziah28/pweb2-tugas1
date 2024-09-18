@@ -1,4 +1,6 @@
 # Jobsheet1
+# 1.Inheritance
+
 Kelas Mahasiswa:
 
           class Mahasiswa {
