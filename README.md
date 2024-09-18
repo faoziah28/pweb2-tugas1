@@ -45,7 +45,8 @@ Operasi dan Output:
           Menampilkan data setelah perubahan NIM.
 
 
-kodingan lengkapnuya:
+kodingan lengkapnya:
+
 
                     <?php
                         class Mahasiswa {
