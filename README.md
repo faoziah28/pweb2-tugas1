@@ -691,7 +691,120 @@ Kodingan Abstraction.php
 
 
 Output :
+
 <img width="359" alt="aj2" src="https://github.com/user-attachments/assets/fff4e461-57c2-4f10-9355-65cb1bfb8b30">
+
+
+# Jobsheet 3
+1. Membuat Kelas Person (Kelas Induk)
+
+          class Person {
+              protected $name;
+   
+Class Person adalah kelas induk yang memiliki satu atribut, yaitu $name. Atribut ini bersifat protected, yang artinya bisa diakses di dalam kelas ini dan juga kelas turunannya.
+
+3. Konstruktor Kelas Person
+
+          public function __construct($name){
+              $this->name = $name;
+          }
+Konstruktor di kelas Person digunakan untuk menginisialisasi atribut $name. Setiap kali kita membuat objek dari kelas ini (atau kelas turunannya), kita harus memberikan nilai untuk name.
+
+4. Metode getName
+
+public function getName(){
+    return $this->name;
+}
+Metode getName() digunakan untuk mendapatkan nilai dari atribut $name. Jadi, ketika kita memanggil metode ini, ia akan mengembalikan nama yang sudah disimpan di objek.
+
+5. Membuat Kelas Student yang Mewarisi Person
+
+
+class Student extends Person {
+    public $studentID;
+Class Student adalah kelas turunan yang mewarisi semua atribut dan metode dari kelas Person.
+Selain itu, kelas ini menambahkan atribut baru, yaitu $studentID, yang digunakan untuk menyimpan ID mahasiswa.
+
+6. Konstruktor Kelas Student
+
+          public function __construct($name, $studentID){
+              parent::__construct($name);
+              $this->studentID = $studentID;
+             }
+
+
+Konstruktor di kelas Student menerima dua parameter: name dan studentID.
+Bagian parent::__construct($name) digunakan untuk memanggil konstruktor dari kelas induk Person, yang bertugas menginisialisasi atribut name.
+Atribut $studentID disimpan di dalam objek menggunakan $this->studentID.
+
+
+7. Metode getStudentID
+
+                              public function getStudentID(){
+                                  return $this->studentID;
+                              }
+Metode getStudentID() digunakan untuk mendapatkan nilai dari atribut studentID.
+
+
+7. Membuat Objek Student
+
+          $studentnew = new Student("Anisatun", "2303");
+Di sini, kita membuat objek $studentnew dari kelas Student dengan nama "Anisatun" dan ID "2303". Ini akan menginisialisasi atribut name dan studentID pada objek tersebut.
+8. Menampilkan Data
+
+                              echo "Nama: " . $studentnew->getName() . "<br>";
+                              echo "ID: " . $studentnew->getStudentID();
+                              
+Pertama, kita memanggil metode getName() dari objek $studentnew untuk menampilkan nama yang disimpan di objek.
+Kedua, kita memanggil metode getStudentID() untuk menampilkan ID mahasiswa yang disimpan di objek.
+
+Kodingan inheritance.php
+<?php
+//class parent
+class Person {
+   
+    protected $name; //protected bisa diakses semua kelas turunan
+
+    //inisialisasi property name
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    //metode agar mendapatkan name
+    public function getName(){
+        return $this->name;
+    }
+}
+//class student diwarisi class person
+class Student extends Person {
+    //property tambahan khusus student
+    public $studentID;
+
+     // inisialisasi name dan studentID
+    public function __construct($name, $studentID){
+                            // Memanggil constructor dari kelas induk
+                            parent::__construct($name);
+                            $this->studentID = $studentID;
+                             }
+
+                               // Metode agar mendapatkan studentID
+                                  public function getStudentID(){
+                                      return $this->studentID;
+                                  }
+                     }
+                     
+                              //instansisasi objek
+                              $studentnew = new Student("Anisatun", "2303");
+                              //Agar tampil data dari metode getName
+                               echo "Nama: " . $studentnew->getName() . "<br>";
+                              //Agar tampil data dari metode getStudentID
+                              echo "ID: " . $studentnew->getStudentID();
+          ?>
+          
+
+Outputnya:
+
+<img width="344" alt="ij3" src="https://github.com/user-attachments/assets/0c79b40c-185f-4fd7-95ba-1b73119cb6f1">
 
 
 
