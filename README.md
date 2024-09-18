@@ -759,39 +759,39 @@ Pertama, kita memanggil metode getName() dari objek $studentnew untuk menampilka
 Kedua, kita memanggil metode getStudentID() untuk menampilkan ID mahasiswa yang disimpan di objek.
 
 Kodingan inheritance.php
-<?php
-//class parent
-class Person {
+          <?php
+          //class parent
+          class Person {
    
-    protected $name; //protected bisa diakses semua kelas turunan
+              protected $name; //protected bisa diakses semua kelas turunan
 
-    //inisialisasi property name
-    public function __construct($name){
-        $this->name = $name;
-    }
+              //inisialisasi property name
+              public function __construct($name){
+                  $this->name = $name;
+              }
 
-    //metode agar mendapatkan name
-    public function getName(){
-        return $this->name;
-    }
-}
-//class student diwarisi class person
-class Student extends Person {
-    //property tambahan khusus student
-    public $studentID;
+              //metode agar mendapatkan name
+              public function getName(){
+                  return $this->name;
+              }
+          }
+          //class student diwarisi class person
+          class Student extends Person {
+              //property tambahan khusus student
+              public $studentID;
 
-     // inisialisasi name dan studentID
-    public function __construct($name, $studentID){
-                            // Memanggil constructor dari kelas induk
+               // inisialisasi name dan studentID
+              public function __construct($name, $studentID){
+                          // Memanggil constructor dari kelas induk
                             parent::__construct($name);
                             $this->studentID = $studentID;
                              }
 
-                               // Metode agar mendapatkan studentID
+                         // Metode agar mendapatkan studentID
                                   public function getStudentID(){
                                       return $this->studentID;
                                   }
-                     }
+           }
                      
                               //instansisasi objek
                               $studentnew = new Student("Anisatun", "2303");
