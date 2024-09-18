@@ -1,39 +1,38 @@
 <?php
 //class abstrak
 abstract class Course {
-    //metode yang tidak memiliki implementasi dalam kelas abstrak dan harus di implementasikan dalam kelas turunannya
     abstract public function getCourseDetails();
 }
-//class onlinecourse mewarisi class course
+//kelas onlinecourse diwarisi dari kelas Course
 class OnlineCourse extends Course{
-    //property class onlinecourse yang private
+    //property class onlinecourse yang private pengajar dan matkul
     private $pengajar;
-    private $matkul;
+    private $matakuliah;
 
-    //construct yang menginisialisasi property pengajar dan matkul
-    public function __construct($pengajar, $matkul){
+    //menginisialisasi property pengajar dan matkul oleh construct
+    public function __construct($pengajar, $matakuliah){
         $this->pengajar = $pengajar;
-        $this->matkul = $matkul;
+        $this->matakuliah = $matakuliah;
     }
 
     //implementasi metode getCourseDetails() berasal dari class abstrak course
     public function getCourseDetails() {
-        return "Online Course dengan pengajar: $this->pengajar dan matkul $this->matkul.";
+        return "Online Course dengan pengajar: $this->pengajar dan matkul $this->matakuliah.";
     }
 }
 //class offlinecourse yang mewarisi class course
 class OfflineCourse extends Course {
-    //property class offlinecourse yang private
+    //property yang di privat
     private $tempat;
     private $hari;
 
-     //construct yang menginisialisasi property pengajar dan matkul
+     //menginisialisasi property tempat dan hari oleh construct
     public function __construct($tempat, $hari){
         $this->tempat = $tempat;
         $this->hari = $hari;
     }
 
-    //implementasi metode getCourseDetails() berasal class abstrak course
+    //penerapan metode getCourseDetails() berasal class abstrak course
     public function getCourseDetails() {
         return "Online Course dengan tempat: $this->tempat dan hari $this->hari.";
     }
@@ -41,8 +40,8 @@ class OfflineCourse extends Course {
 //instansiasi objek dari class Onlinecourse
 $online = new OnlineCourse("Anis", "pweb");
 //instansiasi objek dari class Offlinecourse
-$offline = new OfflineCourse("Politeknik", "kamis");
-//pemanggilan metode getCourseDetails() dari objek online dan offline
+$offline = new OfflineCourse("Bimbel DPC", "kamis");
+//memanggil metode getCourseDetails() asalnya objek online dan offline
 echo $online->getCourseDetails() . "<br>";
 echo $offline->getCourseDetails();
 
