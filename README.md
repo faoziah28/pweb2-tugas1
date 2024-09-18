@@ -1,4 +1,4 @@
-# Jobsheet1
+          # Jobsheet1
 # 1.Inheritance
 
 Kelas Mahasiswa:
@@ -699,6 +699,8 @@ Output :
 
 
 # Jobsheet 3
+# 1 Inheritance
+
 1. Membuat Kelas Person (Kelas Induk)
 
           class Person {
@@ -810,6 +812,158 @@ Kodingan inheritance.php:
 Outputnya:
 
 <img width="344" alt="ij3" src="https://github.com/user-attachments/assets/0c79b40c-185f-4fd7-95ba-1b73119cb6f1">
+
+# 2. Polymorphism
+
+1. Membuat Kelas Person (Kelas Induk)
+
+          class Person {
+              protected $name; //property name yang protected
+   
+Kelas Person adalah kelas induk yang memiliki properti $name. Properti ini bersifat protected, artinya bisa diakses dari dalam kelas ini dan kelas turunannya.
+
+3. Konstruktor Kelas Person
+
+          public function __construct($name){
+               $this->name = $name;
+          }
+   
+Konstruktor ini digunakan untuk menginisialisasi properti $name saat objek dibuat. Saat objek dibuat, nilai name akan disimpan.
+
+3. Metode getName
+
+          public function getName(){
+              return $this->name;
+          }
+   
+Metode getName() digunakan untuk mengembalikan nilai dari properti $name. Kelas turunan dapat menggunakan atau mengganti metode ini.
+
+5. Membuat Kelas Teacher yang Mewarisi Person
+
+          class Teacher extends Person {
+              public $teacherID;
+Kelas Teacher adalah turunan dari Person. Selain mewarisi properti $name, kelas ini juga memiliki properti tambahan $teacherID yang menyimpan ID guru.
+
+6. Konstruktor Kelas Teacher
+
+          public function __construct ($name, $teacherID){
+              parent::__construct($name);
+              $this->teacherID = $teacherID;
+          }
+Konstruktor ini menginisialisasi properti $name menggunakan konstruktor kelas induk Person dengan kata kunci parent. Selain itu, properti $teacherID juga diinisialisasi.
+
+7. Override Metode getName pada Kelas Teacher
+
+          public function getName(){
+              return "Teacher: " . $this->name;
+                    }
+Metode ini override metode getName() dari kelas induk. Sekarang, metode ini akan mengembalikan teks yang spesifik untuk guru dengan format "Teacher: [nama]".
+
+8. Membuat Kelas Student yang Mewarisi Person
+
+          class Student extends Person {
+              public $studentID;
+   
+Kelas Student juga mewarisi properti $name dari kelas Person dan menambahkan properti baru $studentID untuk menyimpan ID mahasiswa.
+
+8. Konstruktor Kelas Student
+
+          public function __construct($name, $studentID){
+              parent::__construct($name);
+              $this->studentID = $studentID;
+          }
+Konstruktor ini juga menginisialisasi properti $name menggunakan konstruktor dari kelas induk, serta inisialisasi untuk properti $studentID.
+
+9. Override Metode getName pada Kelas Student
+
+          public function getName(){
+              return "Student: " . $this->name;
+          }
+Sama seperti kelas Teacher, metode ini juga override metode getName(), tetapi kali ini menampilkan format untuk mahasiswa dengan "Student: [nama]".
+
+10. Membuat Objek dari Teacher dan Student
+
+          $teacherbaru = new Teacher("Nurul", "222");
+          $studentbaru = new Student("Azizah", "333");
+Di sini, kita membuat dua objek:
+$teacherbaru adalah objek dari kelas Teacher dengan nama "Nurul" dan ID guru "222".
+$studentbaru adalah objek dari kelas Student dengan nama "Azizah" dan ID mahasiswa "333".
+
+11. Menampilkan Data Menggunakan Metode getName
+
+          echo $teacherbaru->getName() . "<br>"; 
+          echo $studentbaru->getName();
+Untuk objek $teacherbaru, metode getName() menampilkan: "Teacher: Nurul".
+Untuk objek $studentbaru, metode getName() menampilkan: "Student: Azizah".
+
+
+Kodingan :
+                     <?php
+                    //definisi class person
+                     class Person {
+                                  protected $name; //property name yang protected
+
+                               //untuk menginisialisasi name
+                              public function __construct($name){
+                              $this->name = $name;
+                               }
+
+                               //metode untuk mendapatkan name
+                               public function getName(){
+                                        return $this->name;
+                                }
+                              }
+                              //class teacher yang mewarisi dari person
+                              class Teacher extends Person {
+                              public $teacherID; //property teacherID
+
+                              //menginisialisasi property name dan teacherID
+                               public function __construct ($name, $teacherID){
+                                        parent::__construct($name);
+                                        $this->teacherID = $teacherID;
+                               }
+
+                                  // Override metode getName untuk menampilkan format khusus Teacher
+                                  public function getName(){
+                                      return "Teacher: " . $this->name ;
+                                  }
+
+                                  //metode mendapatkan property teacherID
+                                  public function getTeacherID(){
+                                      return $this->teacherID;
+                                            }
+                              }
+                    class Student extends Person {
+                        public $studentID;
+
+                        public function __construct($name, $studentID){
+                            parent::__construct($name);
+                            $this->studentID = $studentID;
+                      }
+
+                        // Override metode getName untuk menampilkan format khusus Student
+                        public function getName(){
+                            return "Student: " . $this->name;
+                        }
+
+                        //mendapatkan nilai dari property studentID
+                        public function getStudentID(){
+                            return $this->studentID;
+                        }
+                    }
+                              //instansiasi objek dari class Teacher dan Student
+                              $teacherbaru = new Teacher("Nurul", "222");
+                              $studentbaru = new Student("Azizah", "333");
+
+                              //Menampilkan hasil dari metode getName
+                              echo $teacherbaru->getName() . "<br>"; //output Student: Nurul
+                              echo $studentbaru->getName(); //output Student: Azizah
+
+                    ?>
+
+Output :
+<img width="374" alt="pj3" src="https://github.com/user-attachments/assets/974adbd2-84b5-4355-a35a-71eb295900a3">
+
 
 
 
