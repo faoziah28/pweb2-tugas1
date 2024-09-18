@@ -965,6 +965,128 @@ Output :
 <img width="374" alt="pj3" src="https://github.com/user-attachments/assets/974adbd2-84b5-4355-a35a-71eb295900a3">
 
 
+# 3. Encapsulation
+
+1. Membuat Kelas Student dengan Properti Privat
+
+                    class Student {
+                        private $name;
+                        private $studentID;
+                       }
+   
+Properti $name dan $studentID bersifat private, artinya hanya bisa diakses dari dalam kelas Student itu sendiri. Untuk mengaksesnya dari luar kelas, kita perlu menggunakan metode getter dan setter.
+
+3. Konstruktor Kelas Student
+
+                    public function __construct($name, $studentID){
+                        $this->name = $name;
+                        $this->studentID = $studentID;
+                    }
+   
+Konstruktor ini digunakan untuk menginisialisasi properti $name dan $studentID ketika objek Student dibuat.
+
+4. Metode Getter untuk Mendapatkan Nilai
+
+                              public function getName(){
+                              return "Nama: " . $this->name;
+                                        }
+
+                              public function getStudentID(){
+                                  return "ID: " . $this->studentID;
+                    }
+Metode getName() dan getStudentID() digunakan untuk mengakses nilai dari properti $name dan $studentID di luar kelas. Mereka mengembalikan nilai dalam format yang bisa dibaca oleh pengguna.
+
+4. Metode Setter untuk Mengubah Nilai
+
+                    public function setName($name){
+                        $this->name = $name;
+                    }
+
+                    public function setStudentID($studentID){
+                        $this->studentID = $studentID;
+          }          
+Metode setName() dan setStudentID() digunakan untuk mengubah nilai dari properti $name dan $studentID. Mereka menerima parameter baru dan mengatur ulang properti tersebut dengan nilai baru.
+5. Instansiasi Objek Student
+
+                    $studentbaru = new Student("sofiatun", "555");
+
+Objek baru dari kelas Student dibuat dengan nama "Sofiatun" dan ID "555". Nilai ini diinisialisasi melalui konstruktor.
+6. Menampilkan Data dengan Getter
+
+                              echo $studentbaru->getName() . "<br>";
+                              echo $studentbaru->getStudentID() . "<br>";
+
+Data diakses menggunakan getter dan hasilnya ditampilkan:
+          Output: "Nama: Sofiatun".
+          Output: "ID: 555".
+
+7. Mengubah Nilai dengan Setter
+
+                    $studentbaru->setName("Nurul");
+                    $studentbaru->setStudentID("2828");
+Nama dan ID diubah menggunakan metode setter. Nilai baru yang dimasukkan:
+Nama: "Nurul".
+ID: "2828".
+
+8. Menampilkan Data Setelah Diubah
+
+          echo $studentbaru->getName() . "<br>";
+          echo $studentbaru->getStudentID();
+          
+Setelah diubah, data ditampilkan lagi menggunakan getter:
+          Output: "Nama: Nurul".
+          Output: "ID: 2828".
 
 
+Kodingan:
+<?php
+//buat kelas studen yang memiliki property nama dan studentId yg di privat
+class Student{
+              //property private
+          private $name;
+           private $studentID;
 
+              //nama dan studentID di inisialisikan dengan constructor
+              public function __construct($name, $studentID){
+                  $this->name = $name;
+                  $this->studentID = $studentID;
+              }
+
+              //metode Getter pada name
+                        public function getName(){
+                            return "Nama: " . $this->name;
+                        }
+
+              //metode Getter pada studentID
+                    public function getStudentID(){
+                            return "ID: " . $this->studentID;
+                        }
+
+                     //metode Setter pada name
+                    public function setName($name){
+                            $this->name = $name;
+                        }
+
+                        //Setter untuk StudentID
+                    public function setStudentID($studentID){
+                            $this->studentID = $studentID;
+                        }
+           }
+                    //instansiasi objek dari class student
+                    $studentbaru = new Student("sofiatun", "555");
+
+                    // Mengakses data melalui metode getter
+                    echo $studentbaru->getName() . "<br>";
+                    echo $studentbaru->getStudentID() . "<br>";
+
+                    // Mengubah data dengan metode setter
+                    $studentbaru->setName("Nurul");
+                    $studentbaru->setStudentID("2828");
+
+                    // Menampilkan setelah diubah
+                    echo $studentbaru->getName() . "<br>";
+                    echo $studentbaru->getStudentID();
+          ?>
+
+Output:
+<img width="356" alt="encapsulasij3" src="https://github.com/user-attachments/assets/8e5a11e1-a0de-4f69-bf2d-f30e0628c8de">
