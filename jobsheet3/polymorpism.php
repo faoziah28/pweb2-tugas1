@@ -52,11 +52,11 @@ class Student extends Person {
     }
 }
 //instansiasi objek dari class Teacher dan Student
-$teacher = new Teacher("Nurul", "222");
-$student = new Student("Azizah", "333");
+$teacherbaru = new Teacher("Nurul", "222");
+$studentbaru = new Student("Azizah", "333");
 
 //Menampilkan hasil dari metode getName
-echo $teacher->getName() . "<br>"; //output Student: Nurul
-echo $student->getName(); //output Student: Azizah
+echo $teacherbaru->getName() . "<br>"; //output Student: Nurul
+echo $studentbaru->getName(); //output Student: Azizah
 
 ?>
