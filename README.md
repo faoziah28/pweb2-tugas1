@@ -1390,7 +1390,7 @@ Kodingan lengkapnya:
                                             }
                                         }
                                         //class mahasiswa diwarisi dari person
-                    class Mahasiswa extends Person {
+                       class Mahasiswa extends Person {
                                   //property nim yang private
                                   private $nim;
 
@@ -1409,13 +1409,13 @@ Kodingan lengkapnya:
                                   public function getNim(){
                                       return $this->nim;
                                   }
-                    }
-                    // buat class abstrak Jurnal
-                    abstract class jurnal {
+                     }
+                         // buat class abstrak Jurnal
+                        abstract class jurnal {
                               abstract public function getJurnal();
                               }
-                    //class jurnaldosen diwarisi dari kelas jurnal
-                    class JurnalDosen extends jurnal{
+                       //class jurnaldosen diwarisi dari kelas jurnal
+                       class JurnalDosen extends jurnal{
                                   //property dosen
                                   private $dosen;
 
