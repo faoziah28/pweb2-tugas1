@@ -1,27 +1,27 @@
 <?php
-//definisi class student
+//buat kelas studen yang memiliki property nama dan studentId yg di privat
 class Student{
     //property private
     private $name;
     private $studentID;
 
-    //constructor untuk menginisialisasi nama dan studentID
+    //nama dan studentID di inisialisikan dengan constructor
     public function __construct($name, $studentID){
         $this->name = $name;
         $this->studentID = $studentID;
     }
 
-    //Getter untuk name
+    //metode Getter pada name
     public function getName(){
         return "Nama: " . $this->name;
     }
 
-    //Getter untuk studentID
+    //metode Getter pada studentID
     public function getStudentID(){
         return "ID: " . $this->studentID;
     }
 
-    //Setter untuk name
+    //metode Setter pada name
     public function setName($name){
         $this->name = $name;
     }
@@ -32,17 +32,17 @@ class Student{
     }
 }
 //instansiasi objek dari class student
-$student = new Student("sofiatun", "555");
+$studentbaru = new Student("sofiatun", "555");
 
 // Mengakses data melalui metode getter
-echo $student->getName() . "<br>";
-echo $student->getStudentID() . "<br>";
+echo $studentbaru->getName() . "<br>";
+echo $studentbaru->getStudentID() . "<br>";
 
-// Mengubah data melalui metode setter
-$student->setName("Nurul");
-$student->setStudentID("2828");
+// Mengubah data dengan metode setter
+$studentbaru->setName("Nurul");
+$studentbaru->setStudentID("2828");
 
-// Menampilkan data yang sudah diubah
-echo $student->getName() . "<br>";
-echo $student->getStudentID();
+// Menampilkan setelah diubah
+echo $studentbaru->getName() . "<br>";
+echo $studentbaru->getStudentID();
 ?>
