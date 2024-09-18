@@ -169,60 +169,81 @@ Outputnya :
 
 # Jobsheet2
  # class & object
- Definisi Kelas Mahasiswa:
+ 1. Membuat Class Mahasiswa
+                    Class Mahasiswa{
+                    }
+    
+     Di bagian ini, kita membuat class bernama Mahasiswa. Class adalah template atau cetakan untuk membuat objek. Di           dalam class ini, kita bisa menyimpan data dan membuat fungsi yang terkait dengan mahasiswa.
 
-          class Mahasiswa: Mendefinisikan kelas dengan nama Mahasiswa. Kelas ini berfungsi untuk mendefinisikan blueprint untuk objek mahasiswa.
-          Properti (Atribut):
-
-          public $nama: Menyimpan nama mahasiswa. Dengan aksesibilitas public, properti ini dapat diakses dari mana saja, baik dari dalam maupun luar kelas.
-          public $nim: Menyimpan Nomor Induk Mahasiswa (NIM). Juga dapat diakses dari luar kelas.
-          public $jurusan: Menyimpan jurusan mahasiswa. Dapat diakses dari luar kelas.
-
- Konstruktor:
-
-          public function __construct($nama, $nim, $jurusan):
-          Ini adalah metode khusus yang dijalankan ketika objek Mahasiswa dibuat.
-          Parameter $nama, $nim, dan $jurusan digunakan untuk menginisialisasi properti objek.
-          $this->nama, $this->nim, dan $this->jurusan diatur dengan nilai parameter yang diterima.
-
-Metode tampilData:
-
-          public function tampilData():
-          Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
-
-Metode tampilData:
-
-          public function tampilData():
-          
-          Menggunakan $this->nama, $this->nim, dan $this->jurusan untuk mengambil nilai dari properti objek.
+2. Menambahkan Atribut atau Properties
+                                        public $nama;
+                                        public $nim;
+                                        public $jurusan;
+   
+          Ada tiga atribut (disebut juga properties) yang dibuat: nama, nim, dan jurusan. Atribut ini berfungsi untuk menyimpan informasi yang terkait dengan objek mahasiswa.
+public berarti atribut ini bisa diakses dari luar class ini (bisa dipakai di kode lainnya).
 
 
+3. Membuat Constructor
+                       public function __construct($nama, $nim, $jurusan){
+                                  $this->nama = $nama;
+                                  $this->nim = $nim;
+                                  $this->jurusan = $jurusan;
+                              }
+
+
+   Constructor adalah fungsi khusus yang akan dipanggil secara otomatis ketika sebuah objek baru dibuat.
+Pada constructor ini, tiga parameter diperlukan: $nama, $nim, dan $jurusan. Nilai yang dimasukkan saat membuat objek akan digunakan untuk mengisi atribut nama, nim, dan jurusan di dalam class.
+$this-> digunakan untuk merujuk pada atribut di dalam class. Jadi, $this->nama mengacu pada atribut nama dari objek yang sedang dibuat.
+
+4. Membuat Metode tampilData
+             public function tampilData(){
+                        return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
+          }
+
+Metode tampilData berfungsi untuk menampilkan informasi mahasiswa, yaitu nama, NIM, dan jurusannya. Fungsi ini akan mengembalikan string yang berisi informasi tersebut.
+Atribut dari objek dipanggil menggunakan $this-> seperti $this->nama, yang akan menampilkan data yang sudah diisi sebelumnya.
+
+5. Membuat Objek
+                              $mhs = new Mahasiswa("Anisa", "230302075", "komputer dan bisnis");
+    Di bagian ini, kita membuat sebuah objek baru dari class Mahasiswa bernama $mhs.
+    Ketika objek dibuat, kita mengisi parameter nama, nim, dan jurusan dengan nilai "Anisa", "230302075", dan "komputer dan           bisnis". Nilai ini akan otomatis diisikan ke dalam atribut nama, nim, dan jurusan dari objek $mhs.
+
+
+6.  Menampilkan Data Mahasiswa
+   
+                        echo $mhs->tampilData();
+    
+Di sini, kita memanggil metode tampilData dari objek $mhs yang telah kita buat sebelumnya.
+Hasilnya adalah informasi mengenai mahasiswa dengan nama "Anisa", NIM "230302075", dan jurusan "komputer dan bisnis".
 kodingannya:
 
-                              <?php
-                              //membuat class mahasiswa
-                                  class Mahasiswa {
-                                        /*atribut atau properties berfungsi menyimpan
-                                        data atau keadaan dari objek*/
-                                        public $nama; //aksesbilitas PUBLIC bisa diakses dari mana saja
-                                        public $nim; 
-                                        public $jurusan; 
-                                        //construct berfungsi Menginisialisasi atribut atau preoperty nama, nim, jurusan
-                                         public function __construct($nama, $nim, $jurusan){
-                                        $this->nama = $nama;
-                                        $this->nim = $nim;
-                                        $this->jurusan = $jurusan;
-                                        }
 
-                                        //metode atau function agar bisatampilData
-                                         public function tampilData(){
-                                      return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
-                                            }
-                                        }
-                                        //instansiasi objek mahasiswa1
-                                        $mahasiswa1 = new Mahasiswa("Anisa", "230302075", "komputer dan bisnis");
-                                        //menampilkan informasi tentang objek 
-                                        echo $mahasiswa1->tampilData(); //output : Nama: Anisa, NIM: 230302075, Jurusan:                                            komputer dan bisnis
+                             
+                                        <?php
+                                        //membuat class mahasiswa
+                                        class Mahasiswa {
+                                            /*atribut atau properties berfungsi menyimpan
+                                             data atau keadaan dari objek*/
+                                                  public $nama; //akses public bisa diakses semua kelas
+                                                  public $nim; 
+                                                  public $jurusan; 
+                                                 //inisialisasi atribut atau preoperty nama, nim, jurusan
+                                                 public function __construct($nama, $nim, $jurusan){
+                                                           $this->nama = $nama;
+                                                           $this->nim = $nim;
+                                                           $this->jurusan = $jurusan;
+                                                      }
+
+                                                      //metode atau function agar bisatampilData
+                                                   public function tampilData(){
+                                                          return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan:                                                                       $this->jurusan";
+                                                      }
+                                                  }
+                                                  //instansiasi objek mhs
+                                                  $mhs = new Mahasiswa("Anisa", "230302075", "komputer dan bisnis");
+                                                  //menampilkan informasi tentang objek 
+                                                  echo $mhs->tampilData(); //output : Nama: Anisa, NIM: 230302075, Jurusan: komputer                                                   dan bisnis
                                         ?>
 
 outputnya :
