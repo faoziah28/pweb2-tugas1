@@ -759,7 +759,9 @@ Di sini, kita membuat objek $studentnew dari kelas Student dengan nama "Anisatun
 Pertama, kita memanggil metode getName() dari objek $studentnew untuk menampilkan nama yang disimpan di objek.
 Kedua, kita memanggil metode getStudentID() untuk menampilkan ID mahasiswa yang disimpan di objek.
 
-Kodingan inheritance.php
+Kodingan inheritance.php:
+
+
           <?php
           //class parent
           class Person {
