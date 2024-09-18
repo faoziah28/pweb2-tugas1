@@ -1461,3 +1461,6 @@ Kodingan lengkapnya:
                     echo $mahasiswa->getJurnal() . "<br>";
                     ?>
 
+Output :
+<img width="340" alt="tgs 3" src="https://github.com/user-attachments/assets/af4b4cf9-9661-47e6-8c9e-9e258084aa72">
+
