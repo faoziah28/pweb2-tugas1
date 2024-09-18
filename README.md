@@ -609,6 +609,90 @@ Kodingan Polymorpism.php
 
 <img width="283" alt="pj2" src="https://github.com/user-attachments/assets/98c0e913-9cec-4afe-b253-e82b6fc8902a">
 
-# Polymorpism jobsheet 2
+# Abstraction jobsheet 2
+
+1. Membuat Kelas Abstrak Pengguna
+
+          abstract class Pengguna {
+              abstract public function aksesFitur();
+          }
+
+Kelas abstrak Pengguna adalah sebuah blueprint atau cetak biru. Artinya, kita tidak bisa membuat objek langsung dari kelas ini. Kelas abstrak hanya menyediakan metode yang harus di-override (diterapkan ulang) oleh kelas turunannya.
+Metode abstrak aksesFitur() hanya didefinisikan tanpa isi. Kelas yang mewarisi kelas Pengguna harus menyediakan implementasi dari metode ini.
+
+3. Membuat Kelas Dosen yang Mewarisi Pengguna
+
+          class Dosen extends Pengguna {
+              public function aksesFitur() {
+                  return "Fitur Masukan Nilai";
+              }
+          }
+Kelas Dosen mewarisi dari kelas abstrak Pengguna.
+Kelas ini mengimplementasikan metode aksesFitur(). Jadi, ketika aksesFitur() dipanggil pada objek Dosen, itu akan mengembalikan string "Fitur Masukan Nilai". Ini berarti dosen memiliki fitur untuk memasukkan nilai.
+
+4. Membuat Kelas Mahasiswa yang Mewarisi Pengguna
+
+          class Mahasiswa extends Pengguna {
+              public function aksesFitur() {
+                  return "Fitur Lihat Nilai";
+              }
+          }
+   
+Kelas Mahasiswa juga mewarisi dari kelas abstrak Pengguna.
+Kelas ini mengimplementasikan metode aksesFitur() dengan cara yang berbeda. Ketika aksesFitur() dipanggil pada objek Mahasiswa, ia mengembalikan string "Fitur Lihat Nilai". Ini berarti mahasiswa memiliki fitur untuk melihat nilai.
+
+5. Membuat Objek Dosen dan Mahasiswa
+
+          $dosen = new Dosen();
+          echo $dosen->aksesFitur() . "<br>";
+   
+Di sini, kita membuat objek $dosen dari kelas Dosen. Ketika kita memanggil metode aksesFitur() pada objek tersebut, hasilnya adalah "Fitur Masukan Nilai", karena kelas Dosen mengimplementasikan fitur ini.
+
+          $mhs = new Mahasiswa();
+          echo $mhs->aksesFitur();
+   
+Begitu juga, objek $mhs dibuat dari kelas Mahasiswa. Ketika kita memanggil metode aksesFitur() pada objek mahasiswa, hasilnya adalah "Fitur Lihat Nilai", karena fitur ini diimplementasikan oleh kelas Mahasiswa.
+
+Kodingan Abstraction.php
+
+          <?php
+          // Kelas abstrak Pengguna
+          abstract class Pengguna {
+              // Metode abstrak 
+              abstract public function aksesFitur();
+          }
+
+          // Kelas Dosen di warisi kelas Pengguna
+          class Dosen extends Pengguna {
+                    // Implementasi metode abstrak aksesFitur
+                     public function aksesFitur() {
+                            eturn "Fitur Masukan Nilai";
+                     }
+          }
+
+          // Kelas Mahasiswa di warisi kelas Pengguna
+          class Mahasiswa extends Pengguna {
+                    // Implementasi metode abstrak aksesFitur
+                    public function aksesFitur() {
+                            return "Fitur Lihat Nilai";
+                        }
+                    }
+
+                    // Instansiasi objek kelas Dosen
+                    $dosen = new Dosen ();
+                    // output dari method aksesFitur
+                    echo $dosen->aksesFitur() . "<br>";
+
+                    // Instansiasi objek kelas Mahasiswa
+                    $mhs = new Mahasiswa();
+                    // Menampilkan output dari methode aksesFitur
+                    echo $mhs->aksesFitur();
+          ?>
+
+
+Output :
+<img width="359" alt="aj2" src="https://github.com/user-attachments/assets/fff4e461-57c2-4f10-9355-65cb1bfb8b30">
+
+
 
 
