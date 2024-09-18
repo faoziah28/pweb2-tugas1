@@ -1,5 +1,5 @@
-          # Jobsheet1
-# 1.Inheritance
+          
+# Jobsheet 1
 
 Kelas Mahasiswa:
 
