@@ -1,11 +1,11 @@
 <?php
 // Kelas abstrak Pengguna
 abstract class Pengguna {
-    // Metode abstrak yang harus diimplementasikan oleh kelas turunannya
+    // Metode abstrak 
     abstract public function aksesFitur();
 }
 
-// Kelas Dosen yang mewarisi dari kelas Pengguna
+// Kelas Dosen di warisi kelas Pengguna
 class Dosen extends Pengguna {
     // Implementasi metode abstrak aksesFitur
     public function aksesFitur() {
@@ -13,7 +13,7 @@ class Dosen extends Pengguna {
     }
 }
 
-// Kelas Mahasiswa yang mewarisi dari kelas Pengguna
+// Kelas Mahasiswa di warisi kelas Pengguna
 class Mahasiswa extends Pengguna {
     // Implementasi metode abstrak aksesFitur
     public function aksesFitur() {
@@ -21,13 +21,13 @@ class Mahasiswa extends Pengguna {
     }
 }
 
-// Instansiasi objek dari kelas Dosen
+// Instansiasi objek kelas Dosen
 $dosen = new Dosen ();
-// Menampilkan output dari metode aksesFitur
+// output dari method aksesFitur
 echo $dosen->aksesFitur() . "<br>";
 
-// Instansiasi objek dari kelas Mahasiswa
-$mahasiswa = new Mahasiswa();
-// Menampilkan output dari metode aksesFitur
-echo $mahasiswa->aksesFitur();
+// Instansiasi objek kelas Mahasiswa
+$mahasiswa1 = new Mahasiswa();
+// Menampilkan output dari methode aksesFitur
+echo $mahasiswa1->aksesFitur();
 ?>
