@@ -20,7 +20,7 @@ class OnlineCourse extends Course{
         return "Online Course dengan pengajar: $this->pengajar dan matkul $this->matakuliah.";
     }
 }
-//class offlinecourse yang mewarisi class course
+//class offlinecourse diwarisi class course
 class OfflineCourse extends Course {
     //property yang di privat
     private $tempat;
