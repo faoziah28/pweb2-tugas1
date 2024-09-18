@@ -94,7 +94,8 @@ kodingan lengkapnya:
 
 
 
-              
+
+              Output:
 
 <img width="388" alt="job1" src="https://github.com/user-attachments/assets/a8443dcc-9436-437c-91f4-17fdf526a8ae">
 
