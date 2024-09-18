@@ -101,7 +101,8 @@ kodingan lengkapnya:
 
 # Tugas 1 Modul 1 & 2
 Definisi Kelas Dosen:
-                    class Dosen berfungsi Mendefinisikan kelas dengan nama Dosen.
+ class Dosen berfungsi Mendefinisikan kelas dengan nama Dosen.
+ 
                     <?php
                               //Membuat Kelas Dosen
                               class Dosen {
